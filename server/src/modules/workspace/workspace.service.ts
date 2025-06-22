@@ -8,9 +8,9 @@ import {
 } from '@nestjs/common'
 import { WorkspaceRepository } from './workspace.repository'
 import { CreateWorkspaceDto } from './dto/create-workspace.dto'
-import { IUser } from '../user/dto/IUser'
-import { UserService } from '../user/user.service'
-import { RoleService } from '../role/role.service'
+import { IUser } from '@user/dto/IUser'
+import { UserService } from '@user/user.service'
+import { RoleService } from '@role/role.service'
 import { HTTP_MESSAGES } from '@/consts/http-messages'
 import { UpdateWorkspaceDto } from './dto/update-workspace.dto'
 import {
@@ -21,7 +21,7 @@ import {
   ViewType,
   Workspace,
 } from '@prisma/client'
-import { SheetService } from '../sheet/sheet.service'
+import { SheetService } from '@sheet/sheet.service'
 import { WorkspaceReorderDto } from './dto/reorder-workspaces.dto'
 import { RoleDto } from '@role/dto/role.dto'
 import { LogRepository } from '@log/log.repository'

@@ -3,7 +3,7 @@ import { UserService } from './user.service'
 import { User } from '@/decorators/user.decorator'
 import { IUser } from './dto/IUser'
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
-import { JwtAuthGuard } from '../../guards/jwt-auth.guard'
+import { JwtAuthGuard } from '@guards/jwt-auth.guard'
 import { ChangeRoleDto } from './dto/change-role.dto'
 @ApiBearerAuth()
 @ApiTags('User')

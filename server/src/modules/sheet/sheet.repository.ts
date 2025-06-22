@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common'
 import { CreateSheetDto } from './dto/create-sheet.dto'
 import { UpdateSheetDto } from './dto/update-sheet.dto'
 import { SheetReorderDto } from './dto/reorder-sheets.dto'
-import { ColumnRepository } from '../column/column.repository'
+import { ColumnRepository } from '@column/column.repository'
 @Injectable()
 export class SheetRepository {
   constructor(

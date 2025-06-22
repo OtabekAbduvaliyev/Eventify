@@ -5,12 +5,12 @@ import {
 } from '@nestjs/common'
 import { SelectRepository } from './select.repository'
 import { CreateSelectDto } from './dto/create-select.dto'
-import { IUser } from '../user/dto/IUser'
+import { IUser } from '@user/dto/IUser'
 import { UpdateSelectDto } from './dto/update-select.dto'
 import { DeleteSelectsDto } from './dto/delete-selects.dto'
 import { HTTP_MESSAGES } from '@/consts/http-messages'
-import { UserService } from '../user/user.service'
-import { RoleService } from '../role/role.service'
+import { UserService } from '@user/user.service'
+import { RoleService } from '@role/role.service'
 import { RoleTypes } from '@prisma/client'
 import {
   DeleteResponseDto,
