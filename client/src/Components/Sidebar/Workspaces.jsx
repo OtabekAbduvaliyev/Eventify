@@ -155,6 +155,7 @@ const Workspaces = () => {
       console.error("Error deleting workspace:", error);
     }
   };
+  
   const items = (workspaceId, workspaceOrder) => [
     {
       key: '1',
