@@ -56,8 +56,6 @@ export class TaskService {
       await this.validateBodyMembers(body)
     }
 
-    console.log(body, 'body')
-
     const task = await this.repository.createTask(body, role.companyId)
 
     await this.logUserAction(
@@ -197,7 +195,6 @@ export class TaskService {
     if (selectedRole.type === RoleTypes.AUTHOR) return selectedRole
 
     const userPermissions = selectedRole.access.permissions
-    console.log(userPermissions, 'userPermissions')
     if (
       !userPermissions.includes(permission) &&
       !userPermissions.includes(MemberPermissions.ALL)

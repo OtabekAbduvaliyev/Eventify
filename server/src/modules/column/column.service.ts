@@ -27,7 +27,6 @@ export class ColumnService {
     await this.validateUserRole(role.type, true)
 
     const fieldsToCheck = fieldMapping[body.type.toLowerCase()]
-    console.log(fieldsToCheck, 'fieldsToCheck')
     if (!fieldsToCheck || fieldsToCheck.length === 0)
       throw new BadRequestException(HTTP_MESSAGES.COLUMN.INVALID_TYPE)
 

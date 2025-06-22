@@ -60,7 +60,6 @@ export class MemberRepository {
   }
 
   getMember(memberId: string) {
-    console.log(memberId, 'memberId')
     return this.prisma.member.findUnique({
       where: { id: memberId },
       include: {
