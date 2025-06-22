@@ -75,7 +75,7 @@ const NotificationsPage = () => {
 
   const markAsRead = async (notificationId) => {
     try {
-      await axiosInstance.put(`/notifications/${notificationId}/read`, null, {
+      await axiosInstance.put(`/notification/${notificationId}/read`, null, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotifications(prev => 
@@ -105,8 +105,7 @@ const NotificationsPage = () => {
 
   const handleInvitation = async (notification, status) => {
     try {
-      const userId = notification.userId; // Get userId from notification
-      await axiosInstance.put(`/member/status/${userId}`, {
+      await axiosInstance.patch(`/member/status/${notification.member.id}`, {
         status: status
       }, {
         headers: { Authorization: `Bearer ${token}` }
