@@ -22,9 +22,7 @@ export class NotificationService {
       fromCompany: { connect: { id: dto.companyId } },
       toUser: { connect: { id: dto.userId } },
     }
-    console.log(dto.member, 'dto.member')
     if (dto.member) notificationData.member = { connect: { id: dto.member } }
-    console.log(notificationData, 'notificationData')
     // Create notification
     const notification = await this.prisma.notification.create({
       data: notificationData,

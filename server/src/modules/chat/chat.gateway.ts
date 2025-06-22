@@ -41,7 +41,6 @@ export class ChatGateway implements OnGatewayConnection<Socket> {
       return
     }
 
-    console.log('attach')
     try {
       const decoded = await this.chatService.validateToken(token)
       if (!decoded) throw new WsException(HTTP_MESSAGES.AUTH.INVALID_TOKEN)

@@ -156,7 +156,6 @@ export class MemberService {
     const userId = user.id
 
     const member = await this.repository.getMember(memberId)
-    console.log(member, 'member', userId, 'userId')
     if (!member || member.userId !== userId)
       throw new NotFoundException(HTTP_MESSAGES.MEMBER.NOT_FOUND)
 
