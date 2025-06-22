@@ -82,7 +82,7 @@ export class SheetRepository {
       }
     }
 
-    return sheet
+    return this.findById(sheet.id)
   }
 
   findById(id: string) {

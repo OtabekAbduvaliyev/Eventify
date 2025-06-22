@@ -72,7 +72,7 @@ const CreateSheetFormModal = ({
   const handleSubmit = async () => {
     const updatedSheet = {
       ...sheet,
-      columns,
+      columns: columns.filter((column) => column.show),
     };
     await createSheet(updatedSheet);
     setSheet({ name: "", workspaceId: id, columns });
