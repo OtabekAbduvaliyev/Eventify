@@ -2,7 +2,7 @@ import React from 'react'
 import logo from '../../assets/b4a0bd5e0894dd27c9b0053b36ac6208.png'
 import { IoSettingsSharp } from "react-icons/io5";
 import Workspaces from './Workspaces'
-import Menmbers from './Members'
+import Members from './Members'
 import Viewers from './Viewers'
 
 const Sidebar = () => {
@@ -22,7 +22,7 @@ const Sidebar = () => {
         </div>
         
         <div className="members mt-6 lg:mt-8">
-          <Menmbers />
+          <Members />
         </div>
         
         <div className="viewers mt-6 lg:mt-8">
