@@ -141,6 +141,7 @@ const SheetTabel = ({ tasks = [], isEditing }) => {
   }, [isOpen]);
 
   const handleOk = async () => {
+    console.log(column);
     await createColumn(column);
     refetch();
     handleToggleModal();
@@ -149,6 +150,7 @@ const SheetTabel = ({ tasks = [], isEditing }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value);
     setColumn((prevColumn) => ({
       ...prevColumn,
       [name]: value,

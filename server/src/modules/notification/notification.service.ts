@@ -22,9 +22,9 @@ export class NotificationService {
       fromCompany: { connect: { id: dto.companyId } },
       toUser: { connect: { id: dto.userId } },
     }
-
+    console.log(dto.member, 'dto.member')
     if (dto.member) notificationData.member = { connect: { id: dto.member } }
-
+    console.log(notificationData, 'notificationData')
     // Create notification
     const notification = await this.prisma.notification.create({
       data: notificationData,
@@ -44,6 +44,7 @@ export class NotificationService {
   async getNotificationsByUser(user: IUser) {
     const notifications = await this.prisma.notification.findMany({
       where: { userId: user.id },
+      include: { member: true },
     })
 
     return {
@@ -83,6 +84,23 @@ export class NotificationService {
     }
 
     await this.repository.readAll({ userId: user.id, isRead: false })
+
+    return { status: 'OK' }
+  }
+
+  async read(notificationId: string, user: IUser) {
+    const notification = await this.prisma.notification.findUnique({
+      where: { id: notificationId, userId: user.id },
+    })
+
+    if (!notification) {
+      throw new BadRequestException(HTTP_MESSAGES.NOTIFICATION.NOT_FOUND)
+    }
+
+    await this.prisma.notification.update({
+      where: { id: notificationId },
+      data: { isRead: true },
+    })
 
     return { status: 'OK' }
   }

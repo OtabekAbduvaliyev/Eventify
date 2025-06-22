@@ -49,10 +49,14 @@ export class TaskService {
   // TASK CREATION
   async createTask(body: CreateTaskDto, user: IUser): Promise<Task> {
     const role = await this.validateUserAccess(user, MemberPermissions.CREATE)
-
+    if(role.type === RoleTypes.MEMBER) {
+      body.members = [role.access.id]
+    }
     if (body.members?.length > 0) {
       await this.validateBodyMembers(body)
     }
+
+    console.log(body, 'body')
 
     const task = await this.repository.createTask(body, role.companyId)
 
@@ -193,6 +197,7 @@ export class TaskService {
     if (selectedRole.type === RoleTypes.AUTHOR) return selectedRole
 
     const userPermissions = selectedRole.access.permissions
+    console.log(userPermissions, 'userPermissions')
     if (
       !userPermissions.includes(permission) &&
       !userPermissions.includes(MemberPermissions.ALL)
@@ -211,9 +216,7 @@ export class TaskService {
   }
 
   private getMemberIdForTaskRetrieval(role: RoleDto): string | null {
-    return role.type !== RoleTypes.AUTHOR && role.access.view === ViewType.OWN
-      ? role.access.id
-      : null
+    return role.type !== RoleTypes.AUTHOR && !role.access.permissions.includes(MemberPermissions.ALL) ? role.access.id : null
   }
 
   private async validateBodyMembers(body: CreateTaskDto | UpdateTaskDto) {
