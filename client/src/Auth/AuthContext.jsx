@@ -297,7 +297,7 @@ const AuthProvider = ({ children }) => {
     }
   }
   const createColumn = async (credentials) =>{
-    console.log(credentials);
+    credentials.type = credentials.type.toUpperCase()
     setLoading(true);
     const token = localStorage.getItem('token')
     try {
