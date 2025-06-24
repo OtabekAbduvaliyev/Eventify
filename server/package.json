@@ -88,7 +88,28 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@consts/(.*)$": "<rootDir>/consts/$1",
+      "^@decorators/(.*)$": "<rootDir>/decorators/$1",
+      "^@guards/(.*)$": "<rootDir>/guards/$1",
+      "^@auth/(.*)$": "<rootDir>/modules/auth/$1",
+      "^@company/(.*)$": "<rootDir>/modules/company/$1",
+      "^@role/(.*)$": "<rootDir>/modules/role/$1",
+      "^@member/(.*)$": "<rootDir>/modules/member/$1",
+      "^@notification/(.*)$": "<rootDir>/modules/notification/$1",
+      "^@user/(.*)$": "<rootDir>/modules/user/$1",
+      "^@task/(.*)$": "<rootDir>/modules/task/$1",
+      "^@select/(.*)$": "<rootDir>/modules/select/$1",
+      "^@option/(.*)$": "<rootDir>/modules/option/$1",
+      "^@sheet/(.*)$": "<rootDir>/modules/sheet/$1",
+      "^@plan/(.*)$": "<rootDir>/modules/plan/$1",
+      "^@workspace/(.*)$": "<rootDir>/modules/workspace/$1",
+      "^@log/(.*)$": "<rootDir>/modules/log/$1",
+      "^@stripe/(.*)$": "<rootDir>/core/stripe/$1",
+      "^@core/(.*)$": "<rootDir>/core/$1",
+      "^@/(.*)$": "<rootDir>/$1"
+    }
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.8",

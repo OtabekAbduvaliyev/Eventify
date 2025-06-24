@@ -19,6 +19,7 @@
       "@role/*": ["./modules/role/*"],
       "@member/*": ["./modules/member/*"],
       "@notification/*": ["./modules/notification/*"],
+      "@column/*": ["./modules/column/*"],
       "@user/*": ["./modules/user/*"],
       "@task/*": ["./modules/task/*"],
       "@select/*": ["./modules/select/*"],

@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common'
 import { SelectService } from './select.service'
 import { User } from '@/decorators/user.decorator'
-import { IUser } from '../user/dto/IUser'
+import { IUser } from '@user/dto/IUser'
 import { CreateSelectDto } from './dto/create-select.dto'
 import { UpdateSelectDto } from './dto/update-select.dto'
 import { DeleteSelectsDto } from './dto/delete-selects.dto'

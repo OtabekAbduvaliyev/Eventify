@@ -3,12 +3,12 @@ import { SheetController } from './sheet.controller'
 import { SheetService } from './sheet.service'
 import { SheetRepository } from './sheet.repository'
 import { PrismaService } from '@core/prisma/prisma.service'
-import { UserService } from '../user/user.service'
-import { UserRepository } from '../user/user.repository'
-import { RoleService } from '../role/role.service'
-import { WorkspaceModule } from '../workspace/workspace.module' // Import WorkspaceModule
+import { UserService } from '@user/user.service'
+import { UserRepository } from '@user/user.repository'
+import { RoleService } from '@role/role.service'
+import { WorkspaceModule } from '@workspace/workspace.module' // Import WorkspaceModule
 import { LogRepository } from '@log/log.repository'
-import { ColumnRepository } from '../column/column.repository'
+import { ColumnRepository } from '@column/column.repository'
 
 @Module({
   controllers: [SheetController],

@@ -9,7 +9,6 @@ import { RoleDto } from '@role/dto/role.dto'
 import { HTTP_MESSAGES } from '@consts/http-messages'
 import { UserService } from '@user/user.service'
 import { RoleService } from '@role/role.service'
-import { query } from 'express'
 
 @Injectable()
 export class PaymentService {

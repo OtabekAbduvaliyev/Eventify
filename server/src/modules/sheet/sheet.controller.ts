@@ -9,11 +9,11 @@ import {
   UseGuards,
 } from '@nestjs/common'
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
-import { JwtAuthGuard } from '../../guards/jwt-auth.guard'
+import { JwtAuthGuard } from '@guards/jwt-auth.guard'
 import { SheetService } from './sheet.service'
 import { CreateSheetDto } from './dto/create-sheet.dto'
 import { User } from '@/decorators/user.decorator'
-import { IUser } from '../user/dto/IUser'
+import { IUser } from '@user/dto/IUser'
 import { UpdateSheetDto } from './dto/update-sheet.dto'
 import { SheetReorderDto } from './dto/reorder-sheets.dto'
 
