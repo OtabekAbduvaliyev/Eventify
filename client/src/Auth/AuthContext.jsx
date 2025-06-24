@@ -54,6 +54,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const verification = async (credentials) => {
     console.log(credentials);
     setLoading(true);
@@ -80,6 +81,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const createCompany = async (credentials) => {
     const token = localStorage.getItem('token')
     console.log(credentials);
@@ -111,6 +113,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const restoreAccount = async (credentials) => {
     console.log(credentials);
     setLoading(true);
@@ -137,6 +140,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const accountRestoreVerification = async (credentials) => {
     console.log(credentials);
     setLoading(true);
@@ -163,6 +167,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const createWorkspace = async (credentials) => {
     console.log(credentials);
     setLoading(true);
@@ -186,6 +191,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const dndOrders = async (credentials) => {
     setLoading(true);
     const token = localStorage.getItem('token')
@@ -208,6 +214,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const dndOrdersSheets = async (credentials) => {
     setLoading(true);
     const token = localStorage.getItem('token')
@@ -230,6 +237,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const dndOrdersTasks = async (credentials) => {
     setLoading(true);
     const token = localStorage.getItem('token')
@@ -252,6 +260,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   };
+
   const createSheet = async (credentials) =>{
     setLoading(true);
     const token = localStorage.getItem('token')
@@ -274,6 +283,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   }
+
   const updateSheet = async (credentials) =>{
     setLoading(true);
     const token = localStorage.getItem('token')
@@ -296,6 +306,7 @@ const AuthProvider = ({ children }) => {
       });
     }
   }
+
   const createColumn = async (credentials) =>{
     credentials.type = credentials.type.toUpperCase()
     setLoading(true);
@@ -319,8 +330,8 @@ const AuthProvider = ({ children }) => {
       });
     }
   }
+
   const createTask = async (credentials) =>{
-    console.log(credentials);
     setLoading(true);
     const token = localStorage.getItem('token')
     try {
@@ -342,9 +353,26 @@ const AuthProvider = ({ children }) => {
       });
     }
   }
+
+  const getMembers = async () =>{
+    const token = localStorage.getItem('token')
+    try {
+      setLoading(true);
+      const response = await axiosInstance.get("/member",{
+        headers:{
+          Authorization:`Bearer ${token}`
+        }
+      });
+      setLoading(false);
+      return response;
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }
   return (
     <AuthContext.Provider
-      value={{register,verification,loading,login,createCompany,restoreAccount,accountRestoreVerification,createWorkspace,dndOrders,createSheet,createColumn,updateSheet,createTask,dndOrdersSheets,dndOrdersTasks}}
+      value={{register,verification,loading,login,createCompany,restoreAccount,accountRestoreVerification,createWorkspace,dndOrders,createSheet,createColumn,updateSheet,createTask,dndOrdersSheets,dndOrdersTasks, getMembers}}
     >
       {children}
     </AuthContext.Provider>
