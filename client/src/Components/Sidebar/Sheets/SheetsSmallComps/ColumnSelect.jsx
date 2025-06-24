@@ -12,7 +12,7 @@ const ColumnSelect = ({ handleChange, column }) => {
           focus:outline-none focus:border-pink2 focus:ring-1 focus:ring-pink2/50 
           transition-all duration-300"
       >
-        <option value="SELECT">Select</option>
+        {/* <option value="SELECT">Select</option> */}
         <option value="TEXT">Text</option>
         <option value="NUMBER">Number</option>
         <option value="DATE">Date</option>

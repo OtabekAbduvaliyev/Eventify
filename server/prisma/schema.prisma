@@ -248,11 +248,11 @@ model Task {
   text3       String?
   text4       String?
   text5       String?
-  number1     String?
-  number2     String?
-  number3     String?
-  number4     String?
-  number5     String?
+  number1     Int?
+  number2     Int?
+  number3     Int?
+  number4     Int?
+  number5     Int?
   checkbox1   Boolean?
   checkbox2   Boolean?
   checkbox3   Boolean?
